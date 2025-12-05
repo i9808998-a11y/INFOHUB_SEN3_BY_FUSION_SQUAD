@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoHub - Your Daily Updates</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html" style="text-decoration: none; color: inherit;">InfoHub</a></h1>
+            </div>
+            <nav class="main-nav" id="mainNav">
+                <!-- Navigation will be dynamically inserted here by JS -->
+            </nav>
+            <div class="header-user-controls">
+                <div class="search-bar" id="searchBarContainer">
+                    <input type="text" id="searchInput" placeholder="Search posts...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div id="username-display"></div>
+                <label class="dark-mode-toggle" for="darkModeSwitch">
+                    <input type="checkbox" id="darkModeSwitch">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Your Daily Source for Updates</h2>
+                <p>Stay informed with the latest news, educational updates, announcements, and more from our community.</p>
+                <a href="#content" class="btn btn-primary">Explore Updates</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="content" class="main-content">
+        <div class="container">
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <h2>Browse by Category</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Updates</button>
+                    <button class="filter-btn" data-filter="news">Daily News</button>
+                    <button class="filter-btn" data-filter="education">Education</button>
+                    <button class="filter-btn" data-filter="announcements">Announcements</button>
+                    <button class="filter-btn" data-filter="general">General</button>
+                </div>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="content-grid" id="contentGrid">
+                <!-- Content items will be dynamically inserted here by JS -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About InfoHub</h3>
+                    <p>Your trusted source for daily news, educational updates, announcements, and general information.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#news">Daily News</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#announcements">Announcements</a></li>
+                        <li><a href="#general">General Updates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@infohub.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 InfoHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
