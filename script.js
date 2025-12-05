@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         contact: {
             email: "info@infohub.com",
-            phone: "(123) 456-7890",
-            address: "123 Info Street, Info City, 12345"
+            phone: "+91 9843312276",
+            address: "123 Maduravoyul, Chennai, 600001"
         },
         social: {
             facebook: "#",
@@ -1021,4 +1021,5 @@ if (currentPage === "" || currentPage === "/") {
         });
     }
 });
+
 
