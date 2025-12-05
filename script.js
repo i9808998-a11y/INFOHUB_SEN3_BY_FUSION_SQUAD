@@ -45,6 +45,15 @@ document.addEventListener('DOMContentLoaded', function() {
         ];
         setUsers(defaultUsers);
     }
+    // ALWAYS ensure admin exists
+let users = getUsers();
+let adminUser = users.find(u => u.username === "admin");
+
+if (!adminUser) {
+    users.push({ id: Date.now(), username: "admin", password: "admin123", isAdmin: true });
+    setUsers(users);
+}
+
     if (!localStorage.getItem('posts')) {
         const defaultPosts = [
             { id: 1, authorId: 1, authorName: 'admin', category: 'news', title: 'Welcome to InfoHub!', content: 'This is a platform for community updates. Feel free to sign up and contribute.', date: new Date().toISOString(), image: null },
@@ -1012,3 +1021,4 @@ if (currentPage === "" || currentPage === "/") {
         });
     }
 });
+
