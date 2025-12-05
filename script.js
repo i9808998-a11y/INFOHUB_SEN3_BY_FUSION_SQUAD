@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         contact: {
             email: "info@infohub.com",
-            phone: "+91 9843312276",
-            address: "123 Maduravoyul, Chennai, 600023"
+            phone: "(123) 456-7890",
+            address: "123 Info Street, Info City, 12345"
         },
         social: {
             facebook: "#",
@@ -259,7 +259,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // --- PAGE-SPECIFIC LOGIC ---
-    const currentPage = window.location.pathname.split('/').pop();
+    let currentPage = window.location.pathname.split('/').pop();
+if (currentPage === "" || currentPage === "/") {
+    currentPage = "index.html";
+}
+
 
     // Index Page Logic
     if (currentPage === 'index.html') {
@@ -423,7 +427,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // Create new post form
+                // Create new post form
         const createPostForm = document.getElementById('createPostForm');
         if(createPostForm) {
             createPostForm.addEventListener('submit', function(e) {
@@ -440,20 +444,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     title,
                     content,
                     date: new Date().toISOString(),
-                    image: uploadedImageBase64,
-                    approved: !websiteContent.settings.requireApproval
+                    image: uploadedImageBase64
                 };
                 
                 const allPosts = getPosts();
                 allPosts.push(newPost);
                 setPosts(allPosts);
                 
-                if (websiteContent.settings.requireApproval) {
-                    showPopup('Update submitted for approval!');
-                } else {
-                    showPopup('Update published successfully!');
-                }
-                
+                showPopup('Update published successfully!');
                 createPostForm.reset();
                 if(imagePreviewContainer) imagePreviewContainer.style.display = 'none';
                 uploadedImageBase64 = null;
